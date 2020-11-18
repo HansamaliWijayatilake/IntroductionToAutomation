@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -44,8 +45,8 @@ public class TestImplementation {
 
         String firstName = "Hansi";
         String lastName = "Wijayatilake";
-        String username = "hww2";
-        String email = "hw1@gg.com";
+        String username = "hww3";
+        String email = "hw2@gg.com";
         String password = "abc";
         String city = "Col";
         String state = "west";
@@ -100,5 +101,11 @@ public class TestImplementation {
         System.out.println("Assert that the Thank You Text is Visible");
         Assert.assertTrue(driver.findElement(By.xpath("//div/div[contains(string(), 'Thank you !')]")).isDisplayed());
 
+    }
+
+    @AfterTest
+    public void afterTest() {
+
+        driver.quit();
     }
 }
