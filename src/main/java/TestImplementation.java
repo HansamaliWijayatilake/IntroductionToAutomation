@@ -9,16 +9,13 @@ import org.testng.annotations.Test;
 
 public class TestImplementation {
     WebDriver driver;
-
-
     @BeforeClass
     public void setup(){
         System.setProperty("webdriver.chrome.driver","ChromeDriver/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://www.testandquiz.com/");
     }
-
-    @Test(priority = 0)
+    @Test(priority = 1)
     public void signUp(){
         // Locate Sign up button and store it for later use
         WebElement signupButton = driver.findElement(By.xpath("//a[@href ='/user-registration']"));
@@ -39,14 +36,18 @@ public class TestImplementation {
 
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void fillSignUpForm(){
         // Locate the necessary text fields to fill the form
 
         String firstName = "Hansi";
         String lastName = "Wijayatilake";
-        String username = "hww3";
-        String email = "hw2@gg.com";
+        // NOTE: once the test is executed you will have to update the username if not the test will fail
+        // because previously used usernames cannot be used again
+        String username = "hww5";
+        String email = "hw55@gg.com";
+        // NOTE: once the test is executed you will have to update the email if not the test will fail
+        // because previously used emails cannot be used again
         String password = "abc";
         String city = "Col";
         String state = "west";
